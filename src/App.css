@@ -22,6 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .App-link {
@@ -35,4 +37,95 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.btnPersonaje{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  background-color: #c31111;
+  padding: 10px;
+  border: 1.5px solid #ffffff;
+}
+.btnPersonaje:hover{
+  color: black;
+  background-color: #ffffff;
+}
+
+.btnPlace{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  background-color: #29d10b;
+  padding: 10px;
+  border: 1.5px solid #ffffff;
+}
+.btnPlace:hover{
+  color: black;
+  background-color: #ffffff;
+}
+
+.btnType{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  background-color: #172dd4;
+  padding: 10px;
+  border: 1.5px solid #ffffff;
+}
+.btnType:hover{
+  color: black;
+  background-color: #ffffff;
+}
+
+
+.inputsPersonaje{
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  background-color: #c31111;
+  padding: 3px;
+  border: 1.5px solid #ffffff;
+}
+
+.inputsPlace{
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  background-color: #10c245;
+  padding: 3px;
+  border: 1.5px solid #ffffff;
+}
+
+.inputsType{
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  background-color: #172dd4;
+  padding: 3px;
+  border: 1.5px solid #ffffff;
+}
+
+.labelStyle{
+  font-size: medium;
+}
+
+
+.personajes{
+  padding-top: 50px;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 50px;
+  border: 2px solid #cd0808;
+}
+
+.lugares{
+  padding-top: 50px;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 50px;
+  border: 2px solid #20d009;
+}
+
+.tipos{
+  padding-top: 50px;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 50px;
+  border: 2px solid #1761e1;
 }
