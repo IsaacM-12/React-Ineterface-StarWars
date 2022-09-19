@@ -8,7 +8,7 @@ const Personajes = () => {
     const [personajeAge, setpersonajeAge] = useState(0);
     const [personajeHeight, setpersonajeHeight] = useState(0);
     const [personajeGender, setpersonajeGender] = useState("");
- // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------------------------------
   // Personaje
   // -----------------------------------------------------------------------------------------------------
 
@@ -127,84 +127,88 @@ const Personajes = () => {
     console.log(personajes);
     return(
     <div className="personajes">
+        <div className='portada'>
+          <h1 > STAR WARS </h1>
+        </div>
+        
+        <img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
+          height="380"></img>
 
-    <img src="https://i.blogs.es/e33475/cartel-mandalorian-the/1366_2000.jpeg"
-    height="300"></img>
-    <h1> Personajes </h1>
-    <ul> {personajes} </ul>
-
-
-    <button onClick={selectPersonajes} className="btnPersonaje"> Cargar personajes </button>
-    
-
-    <h3> Crear Personaje </h3>
-      <label className='labelStyle'>
-        ID:   
-        <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
-      </label>
-      <br></br>
-      <label className='labelStyle'>
-        Nombre:   
-        <input className='inputsPersonaje' onChange={setNameToPersonaje} type="text"/>
-      </label >
-      <br></br>
-      <label className='labelStyle'>
-        Edad:   
-        <input className='inputsPersonaje' onChange={setAgeToPersonaje} type="text" />
-      </label>
-      <br></br>
-      <label className='labelStyle'>
-        Altura:   
-        <input className='inputsPersonaje' onChange={setHeightToPersonaje} type="text"/>
-      </label >
-      <br></br>
-      <label className='labelStyle'>
-        Genero:   
-        <input className='inputsPersonaje' onChange={setGenderToPersonaje} type="text" />
-      </label>
-      
-      <br></br> <br></br>
-      <button className='btnPersonaje' onClick={createPersonaje}> Guardar Personaje </button>
+        <h1> Personajes </h1>
+        <ul> {personajes} </ul>
 
 
-    <h3> Actualizar Personaje </h3>
-    <label className='labelStyle'>
-        ID:   
-        <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
-      </label>
-      <br></br>
-      <label className='labelStyle'>
-        Nombre:   
-        <input className='inputsPersonaje' onChange={setNameToPersonaje} type="text"/>
-      </label >
-      <br></br>
-      <label className='labelStyle'>
-        Edad:   
-        <input className='inputsPersonaje' onChange={setAgeToPersonaje} type="text" />
-      </label>
-      <br></br>
-      <label className='labelStyle'>
-        Altura:   
-        <input className='inputsPersonaje' onChange={setHeightToPersonaje} type="text"/>
-      </label >
-      <br></br>
-      <label className='labelStyle'>
-        Genero:   
-        <input className='inputsPersonaje' onChange={setGenderToPersonaje} type="text" />
-      </label>
-      
-      <br></br> <br></br>
-      <button className='btnPersonaje' onClick={updatePersonaje}> Actualizar Personaje </button>
+        <button onClick={selectPersonajes} className="btnPersonaje"> Cargar personajes </button>
 
 
-    <h3> Borrar Personaje </h3>
-      <label className='labelStyle'>
-        ID:   
-        <input className='inputsPersonaje'  onChange={setIdToPersonaje} type="text"/>
-      </label>
-      
-      <br></br> <br></br>
-      <button className='btnPersonaje' onClick={deletePersonaje}> Borrar Personaje </button>
+        <h3> Crear Personaje </h3>
+          <label className='labelStyle'>
+            ID:   
+            <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
+          </label>
+          <br></br>
+          <label className='labelStyle'>
+            Nombre:   
+            <input className='inputsPersonaje' onChange={setNameToPersonaje} type="text"/>
+          </label >
+          <br></br>
+          <label className='labelStyle'>
+            Edad:   
+            <input className='inputsPersonaje' onChange={setAgeToPersonaje} type="text" />
+          </label>
+          <br></br>
+          <label className='labelStyle'>
+            Altura:   
+            <input className='inputsPersonaje' onChange={setHeightToPersonaje} type="text"/>
+          </label >
+          <br></br>
+          <label className='labelStyle'>
+            Genero:   
+            <input className='inputsPersonaje' onChange={setGenderToPersonaje} type="text" />
+          </label>
+          
+          <br></br> <br></br>
+          <button className='btnPersonaje' onClick={createPersonaje}> Guardar Personaje </button>
+
+
+        <h3> Actualizar Personaje </h3>
+        <label className='labelStyle'>
+            ID:   
+            <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
+          </label>
+          <br></br>
+          <label className='labelStyle'>
+            Nombre:   
+            <input className='inputsPersonaje' onChange={setNameToPersonaje} type="text"/>
+          </label >
+          <br></br>
+          <label className='labelStyle'>
+            Edad:   
+            <input className='inputsPersonaje' onChange={setAgeToPersonaje} type="text" />
+          </label>
+          <br></br>
+          <label className='labelStyle'>
+            Altura:   
+            <input className='inputsPersonaje' onChange={setHeightToPersonaje} type="text"/>
+          </label >
+          <br></br>
+          <label className='labelStyle'>
+            Genero:   
+            <input className='inputsPersonaje' onChange={setGenderToPersonaje} type="text" />
+          </label>
+          
+          <br></br> <br></br>
+          <button className='btnPersonaje' onClick={updatePersonaje}> Actualizar Personaje </button>
+
+
+        <h3> Borrar Personaje </h3>
+          <label className='labelStyle'>
+            ID:   
+            <input className='inputsPersonaje'  onChange={setIdToPersonaje} type="text"/>
+          </label>
+          
+          <br></br> <br></br>
+          <button className='btnPersonaje' onClick={deletePersonaje}> Borrar Personaje </button>
 
   </div>)
 }

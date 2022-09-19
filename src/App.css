@@ -107,7 +107,7 @@
 
 
 .personajes{
-  padding-top: 50px;
+  padding-top: 20px;
   padding-left: 220px;
   padding-right: 220px;
   padding-bottom: 50px;
@@ -141,7 +141,7 @@
 }
 
 .portada{ 
-  padding-bottom: 15px; 
-  border: 2px solid red;
-  width: 1090px;
+  color: black;
+  font-size: 30px;
+  font-style: inherit;
 }
