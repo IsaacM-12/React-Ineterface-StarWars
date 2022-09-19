@@ -22,8 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-bottom: 50px;
-  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .App-link {
@@ -111,7 +111,7 @@
   padding-left: 220px;
   padding-right: 220px;
   padding-bottom: 50px;
-  border: 2px solid #cd0808;
+  border: 2px solid red;
 }
 
 .lugares{
@@ -127,5 +127,16 @@
   padding-left: 220px;
   padding-right: 220px;
   padding-bottom: 50px;
-  border: 2px solid #1761e1;
+  border: 2px solid #005eff;
+}
+
+.divStyle{
+  padding: 2cm;
+}
+
+.portada{
+  padding: 12%;
+  padding-top: 5px;
+  padding-bottom: 5%;
+  border: 2px solid red;
 }

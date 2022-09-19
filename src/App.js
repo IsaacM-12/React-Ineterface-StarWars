@@ -335,9 +335,13 @@ function App() {
     <div className="App">
       <header className="App-header">
 
+
+      <div className='portada'>
+        <h1 > STAR WARS </h1>
+
         <img src="https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/test/5cbeea135cafe88451149213/sw1.jpg"
         height="500"></img>
-        
+      </div>
 
 
       <div className="personajes">
@@ -558,8 +562,10 @@ function App() {
 
 
 
-      <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2021/09/mandalorian-2485773.jpg" 
-          height="388" ></img>
+      <div className='divStyle'>
+        <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2021/09/mandalorian-2485773.jpg" 
+            height="388" ></img>
+      </div>
 
       </header>
     </div>
