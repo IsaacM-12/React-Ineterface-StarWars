@@ -3,11 +3,11 @@ import axios from 'axios';
 const Personajes = () => {
 
     const [personajes, setpersonaje] = useState([]);
-    const [personajeId, setpersonajeId] = useState();
-    const [personajeName, setpersonajeName] = useState();
-    const [personajeAge, setpersonajeAge] = useState();
-    const [personajeHeight, setpersonajeHeight] = useState();
-    const [personajeGender, setpersonajeGender] = useState();
+    const [personajeId, setpersonajeId] = useState(0);
+    const [personajeName, setpersonajeName] = useState("");
+    const [personajeAge, setpersonajeAge] = useState(0);
+    const [personajeHeight, setpersonajeHeight] = useState(0);
+    const [personajeGender, setpersonajeGender] = useState("");
  // -----------------------------------------------------------------------------------------------------
   // Personaje
   // -----------------------------------------------------------------------------------------------------
@@ -44,6 +44,10 @@ const Personajes = () => {
           height: personajeHeight,
           gender: personajeGender
       }
+      console.log(newPersonaje);
+      if (newPersonaje.id === 0 && newPersonaje.name === ""){
+        alert("Debe digitar todos los datos del personaje.");
+      }else{
       
       const serviceUrl = `http://localhost:8080/personajes`;
       let config = {
@@ -59,7 +63,7 @@ const Personajes = () => {
           selectPersonajes();
         } 
       );
-
+      }
   }
 
   // -------------------------------------------------------------

@@ -112,6 +112,8 @@
   padding-right: 220px;
   padding-bottom: 50px;
   border: 2px solid red;
+  width: 650px;
+
 }
 
 .lugares{
@@ -120,6 +122,8 @@
   padding-right: 220px;
   padding-bottom: 50px;
   border: 2px solid #20d009;
+  width: 650px;
+
 }
 
 .tipos{
@@ -128,15 +132,16 @@
   padding-right: 220px;
   padding-bottom: 50px;
   border: 2px solid #005eff;
+  width: 650px;
+
 }
 
 .divStyle{
   padding: 2cm;
 }
 
-.portada{
-  padding: 12%;
-  padding-top: 5px;
-  padding-bottom: 5%;
+.portada{ 
+  padding-bottom: 15px; 
   border: 2px solid red;
+  width: 1090px;
 }
