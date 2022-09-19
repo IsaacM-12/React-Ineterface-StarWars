@@ -60,11 +60,8 @@ const Personajes = () => {
       };
 
       axios.post(serviceUrl,newPersonaje ,config) //then es usando promises, se puede asignar a una variable si quiere sin promises
-      .then(response => 
-         {alert("Agregado con exito") 
-          selectPersonajes();
-        } 
-      );
+      .then(response =>  {alert("Agregado con exito") 
+                                selectPersonajes();} );
       }
   }
 

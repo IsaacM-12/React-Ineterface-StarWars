@@ -68,7 +68,8 @@ const Type = () => {
     };
 
     axios.put(serviceUrl+typeId, newType , config)
-    .then(response =>  {alert("Actualizado con exito") } );
+    .then(response =>  {alert("Actualizado con exito") 
+                          selectTypes()} );
   }
 
   // -------------------------------------------------------------

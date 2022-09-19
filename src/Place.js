@@ -52,7 +52,8 @@ const Place = () => {
           };
 
           axios.post(serviceUrl,newPlace ,config)
-          .then(response =>  {alert("Agregado con exito") } );
+          .then(response =>  {alert("Agregado con exito") 
+                                selectPlaces();} );
         }
 
   }
