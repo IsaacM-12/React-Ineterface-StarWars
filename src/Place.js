@@ -3,17 +3,17 @@ import axios from 'axios';
 
 const Place = () => {
   
-  const [place, setplace] = useState();
-  const [placeId, setplaceId] = useState();
-  const [placeName, setplaceName] = useState();
-  const [placeTemperature, setplaceTemperature] = useState();
-  const [placeSize, setplaceSize] = useState();
+  const [place, setplace] = useState([]);
+  const [placeId, setplaceId] = useState(0);
+  const [placeName, setplaceName] = useState("");
+  const [placeTemperature, setplaceTemperature] = useState(0);
+  const [placeSize, setplaceSize] = useState(0);
 
   // -----------------------------------------------------------------------------------------------------
   // PLace
   // -----------------------------------------------------------------------------------------------------
 
-   const setIdToPlace = (event) => {
+  const setIdToPlace = (event) => {
     setplaceId(event.target.value);
   }
 
@@ -30,7 +30,7 @@ const Place = () => {
   }
 
   // -------------------------------------------------------------
-  // crea un lugar
+  // crea un PLace
   // -------------------------------------------------------------
   const createPlace = async () => {
         var newPlace = {
@@ -40,20 +40,25 @@ const Place = () => {
           sizePlace: placeSize
       }
       
-      const serviceUrl = `http://localhost:8080/place`;
-      let config = {
-          headers: {
-                  "Content-Type": "application/json"        
-          }
-      };
+      if (newPlace.id === 0 || newPlace.name === "" || newPlace.temperature === 0 || newPlace.sizePlace === 0){
+        alert("Debe digitar todos los datos.");
 
-      axios.post(serviceUrl,newPlace ,config)
-      .then(response =>  {alert("Agregado con exito") } );
+      }else{
+          const serviceUrl = `http://localhost:8080/place`;
+          let config = {
+              headers: {
+                      "Content-Type": "application/json"        
+              }
+          };
+
+          axios.post(serviceUrl,newPlace ,config)
+          .then(response =>  {alert("Agregado con exito") } );
+        }
 
   }
 
   // -------------------------------------------------------------
-  // actualiza un lugar
+  // actualiza un PLace
   // -------------------------------------------------------------
   const updatePlace = async () => {
 
@@ -62,20 +67,24 @@ const Place = () => {
           temperature: placeTemperature,
           sizePlace: placeSize
     }
-    
-    const serviceUrl = `http://localhost:8080/place/`;
-    let config = {
-        headers: {
-                "Content-Type": "application/json"        
-        }
-    };
+    if (newPlace.id === 0 || newPlace.name === "" || newPlace.temperature === 0 || newPlace.sizePlace === 0){
+      alert("Debe digitar todos los datos.");
 
-    axios.put(serviceUrl+placeId, newPlace , config)
-    .then(response =>  {alert("Actualizado con exito") } );
+    }else{
+        const serviceUrl = `http://localhost:8080/place/`;
+        let config = {
+            headers: {
+                    "Content-Type": "application/json"        
+            }
+        };
+
+        axios.put(serviceUrl+placeId, newPlace , config)
+        .then(response =>  {alert("Actualizado con exito") } );
+      }
   }
 
   // -------------------------------------------------------------
-  // borra un lugar
+  // borra un PLace
   // -------------------------------------------------------------
   const deletePlace = async () => {
     const serviceUrl = `http://localhost:8080/place/`;
@@ -84,7 +93,7 @@ const Place = () => {
   }
 
   // -------------------------------------------------------------
-  // selecciona todos los lugar
+  // selecciona todos los PLace
   // -------------------------------------------------------------
     const selectPlaces = async () => {         
       const serviceUrl = "http://localhost:8080/place";

@@ -2,10 +2,10 @@ import {useEffect,useState} from 'react';
 import axios from 'axios';
 
 const Type = () => {
-  const [type, settype] = useState();
-  const [typeId, settypeId] = useState();
-  const [typeName, settypeName] = useState();
-  const [typeSkin, settypeSkin] = useState();
+  const [type, settype] = useState([]);
+  const [typeId, settypeId] = useState(0);
+  const [typeName, settypeName] = useState("");
+  const [typeSkin, settypeSkin] = useState("");
 
   // -----------------------------------------------------------------------------------------------------
   // Type
@@ -33,16 +33,20 @@ const Type = () => {
           skin: typeSkin
       }
       
-      const serviceUrl = `http://localhost:8080/type`;
-      let config = {
-          headers: {
-                  "Content-Type": "application/json"        
-          }
-      };
+      if (newType.id === 0 || newType.name === "" || newType.skin === ""){
+        alert("Debe digitar todos los datos.");
 
-      axios.post(serviceUrl,newType ,config)
-      .then(response =>  {alert("Agregado con exito") } );
+      }else{
+          const serviceUrl = `http://localhost:8080/type`;
+          let config = {
+              headers: {
+                      "Content-Type": "application/json"        
+              }
+          };
 
+          axios.post(serviceUrl,newType ,config)
+          .then(response =>  {alert("Agregado con exito") } );
+        }
   }
 
   // -------------------------------------------------------------

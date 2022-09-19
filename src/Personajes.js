@@ -44,9 +44,11 @@ const Personajes = () => {
           height: personajeHeight,
           gender: personajeGender
       }
-      console.log(newPersonaje);
-      if (newPersonaje.id === 0 && newPersonaje.name === ""){
-        alert("Debe digitar todos los datos del personaje.");
+
+      if (newPersonaje.id === 0 || newPersonaje.name === "" || newPersonaje.age === 0 || newPersonaje.gender === "" 
+            || newPersonaje.height === 0){
+        alert("Debe digitar todos los datos.");
+
       }else{
       
       const serviceUrl = `http://localhost:8080/personajes`;
@@ -78,17 +80,23 @@ const Personajes = () => {
           height: personajeHeight,
           gender: personajeGender
     }
-    
-    const serviceUrl = `http://localhost:8080/personajes/`;
-    let config = {
-        headers: {
-                "Content-Type": "application/json"        
-    
-        }
-    };
 
-    axios.put(serviceUrl+personajeId,newPersonaje ,config)
-    .then(response =>  {alert("Actualizado con exito") } );
+    if (newPersonaje.id === 0 || newPersonaje.name === "" || newPersonaje.age === 0 || newPersonaje.gender === "" 
+            || newPersonaje.height === 0){
+        alert("Debe digitar todos los datos.");
+        
+      }else{
+        const serviceUrl = `http://localhost:8080/personajes/`;
+        let config = {
+            headers: {
+                    "Content-Type": "application/json"        
+        
+            }
+        };
+
+        axios.put(serviceUrl+personajeId,newPersonaje ,config)
+        .then(response =>  {alert("Actualizado con exito") } );
+    }
   }
 
   // -------------------------------------------------------------

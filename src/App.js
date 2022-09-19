@@ -1,6 +1,4 @@
 import './App.css';
-import axios from 'axios';
-import {useEffect,useState} from 'react';
 import Personajes from './Personajes';
 import Place from './Place';
 import Type from './Type';
