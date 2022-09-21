@@ -9,6 +9,8 @@ const Place = () => {
   const [placeTemperature, setplaceTemperature] = useState(0);
   const [placeSize, setplaceSize] = useState(0);
 
+  const [placeIdDelete, setplaceIdDelete] = useState(0);
+
   // -----------------------------------------------------------------------------------------------------
   // PLace
   // -----------------------------------------------------------------------------------------------------
@@ -27,6 +29,10 @@ const Place = () => {
 
   const setSizeToPlace = (event) => {
     setplaceSize(event.target.value);
+  }
+
+  const setIdToPlaceDelete = (event) => {
+    setplaceIdDelete(event.target.value);
   }
 
   // -------------------------------------------------------------
@@ -80,7 +86,8 @@ const Place = () => {
         };
 
         axios.put(serviceUrl+placeId, newPlace , config)
-        .then(response =>  {alert("Actualizado con exito") } );
+        .then(response =>  {alert("Actualizado con exito") 
+                              selectPlaces()} );
       }
   }
 
@@ -89,8 +96,9 @@ const Place = () => {
   // -------------------------------------------------------------
   const deletePlace = async () => {
     const serviceUrl = `http://localhost:8080/place/`;
-    axios.delete(serviceUrl+placeId)
-    .then(response =>  {alert("Borrado con exito") } );
+    axios.delete(serviceUrl+placeIdDelete)
+    .then(response =>  {alert("Borrado con exito") 
+                          selectPlaces()} );
   }
 
   // -------------------------------------------------------------
@@ -129,7 +137,7 @@ const Place = () => {
         <button onClick={selectPlaces} className="btnPlace"> Cargar lugares </button>     
 
 
-        <h3> Crear Lugar </h3>
+        <h3> Crear o Actualizar Lugar </h3>
           <label className='labelStyle'>
             ID:   
             <input className='inputsPlace' onChange={setIdToPlace} type="text" />
@@ -152,28 +160,6 @@ const Place = () => {
           
           <br></br> <br></br>
           <button className='btnPlace' onClick={createPlace}> Guardar Lugar </button>
-
-
-        <h3> Actualizar Lugar </h3>
-          <label className='labelStyle'>
-            ID:   
-            <input className='inputsPlace' onChange={setIdToPlace} type="text" />
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Nombre:   
-            <input className='inputsPlace' onChange={setNameToPlace} type="text" />
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Temperatura:   
-            <input className='inputsPlace' onChange={setTemperatureToPlace} type="text" />
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Tamaño:   
-            <input className='inputsPlace' onChange={setSizeToPlace} type="text" />
-          </label>
           
           <br></br> <br></br>
           <button className='btnPlace' onClick={updatePlace}> Actualizar Lugar </button>
@@ -182,7 +168,7 @@ const Place = () => {
         <h3> Borrar Lugar </h3>
           <label className='labelStyle'>
             ID:   
-            <input className='inputsPlace' onChange={setIdToPlace} type="text" />
+            <input className='inputsPlace' onChange={setIdToPlaceDelete} type="text" />
           </label>
           
           <br></br> <br></br>

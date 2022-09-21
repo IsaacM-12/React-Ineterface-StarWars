@@ -7,6 +7,8 @@ const Type = () => {
   const [typeName, settypeName] = useState("");
   const [typeSkin, settypeSkin] = useState("");
 
+  const [typeIdDelete, settypeIdDelete] = useState("");
+
   // -----------------------------------------------------------------------------------------------------
   // Type
   // -----------------------------------------------------------------------------------------------------
@@ -21,6 +23,10 @@ const Type = () => {
 
   const setSkinToType = (event) => {
     settypeSkin(event.target.value);
+  }
+
+  const setIdToTypeDelete = (event) => {
+    settypeIdDelete(event.target.value);
   }
 
   // -------------------------------------------------------------
@@ -45,7 +51,8 @@ const Type = () => {
           };
 
           axios.post(serviceUrl,newType ,config)
-          .then(response =>  {alert("Agregado con exito") } );
+          .then(response =>  {alert("Agregado con exito") 
+                                selectTypes()} );
         }
   }
 
@@ -77,8 +84,9 @@ const Type = () => {
   // -------------------------------------------------------------
   const deleteType = async () => {
     const serviceUrl = `http://localhost:8080/type/`;
-    axios.delete(serviceUrl+typeId)
-    .then(response =>  {alert("Borrado con exito") } );
+    axios.delete(serviceUrl+typeIdDelete)
+    .then(response =>  {alert("Borrado con exito") 
+                          selectTypes()} );
   }
 
   // -------------------------------------------------------------
@@ -118,7 +126,7 @@ const Type = () => {
         <button onClick={selectTypes} className="btnType"> Cargar Tipos </button>     
 
 
-        <h3> Crear Tipo </h3>
+        <h3> Crear o Actualizar Tipo </h3>
           <label className='labelStyle'>
             ID:   
             <input className='inputsType' onChange={setIdToType} type="text" />
@@ -136,23 +144,6 @@ const Type = () => {
           
           <br></br> <br></br>
           <button className='btnType' onClick={createType}> Guardar Tipo </button>
-
-
-        <h3> Actualizar Tipo </h3>
-          <label className='labelStyle'>
-            ID:   
-            <input className='inputsType' onChange={setIdToType} type="text" />
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Nombre:   
-            <input className='inputsType' onChange={setNameToType} type="text"/>
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Color:   
-            <input className='inputsType' onChange={setSkinToType} type="text" />
-          </label>
           
           <br></br> <br></br>
           <button className='btnType' onClick={updateType}> Actualizar Tipo </button>
@@ -161,7 +152,7 @@ const Type = () => {
         <h3> Borrar Tipo </h3>
           <label className='labelStyle'>
             ID:   
-            <input className='inputsType' onChange={setIdToType} type="text" />
+            <input className='inputsType' onChange={setIdToTypeDelete} type="text" />
           </label>
           
           <br></br> <br></br>

@@ -8,6 +8,9 @@ const Personajes = () => {
     const [personajeAge, setpersonajeAge] = useState(0);
     const [personajeHeight, setpersonajeHeight] = useState(0);
     const [personajeGender, setpersonajeGender] = useState("");
+
+    const [personajeIdDelete, setpersonajeIdDelete] = useState(0);
+
   // -----------------------------------------------------------------------------------------------------
   // Personaje
   // -----------------------------------------------------------------------------------------------------
@@ -30,6 +33,10 @@ const Personajes = () => {
 
   const setGenderToPersonaje = (event) => {
     setpersonajeGender(event.target.value);
+  }
+
+  const setIdToPersonajeDelete = (event) => {
+    setpersonajeIdDelete(event.target.value);
   }
 
   // -------------------------------------------------------------
@@ -87,12 +94,12 @@ const Personajes = () => {
         let config = {
             headers: {
                     "Content-Type": "application/json"        
-        
             }
         };
 
         axios.put(serviceUrl+personajeId,newPersonaje ,config)
-        .then(response =>  {alert("Actualizado con exito") } );
+        .then(response =>  {alert("Actualizado con exito") 
+                              selectPersonajes();} );
     }
   }
 
@@ -101,8 +108,10 @@ const Personajes = () => {
   // -------------------------------------------------------------
   const deletePersonaje = async () => {
     const serviceUrl = `http://localhost:8080/personajes/`;
-    axios.delete(serviceUrl+personajeId)
-    .then(response =>  {alert("Borrado con exito") } );
+    axios.delete(serviceUrl+personajeIdDelete)
+    .then(response =>  {alert("Borrado con exito") 
+                          selectPersonajes()} );
+  
   }
 
   // -------------------------------------------------------------
@@ -146,7 +155,7 @@ const Personajes = () => {
         <button onClick={selectPersonajes} className="btnPersonaje"> Cargar personajes </button>
 
 
-        <h3> Crear Personaje </h3>
+        <h3> Crear o Actualizar Personaje </h3>
           <label className='labelStyle'>
             ID:   
             <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
@@ -175,33 +184,6 @@ const Personajes = () => {
           <br></br> <br></br>
           <button className='btnPersonaje' onClick={createPersonaje}> Guardar Personaje </button>
 
-
-        <h3> Actualizar Personaje </h3>
-        <label className='labelStyle'>
-            ID:   
-            <input className='inputsPersonaje' onChange={setIdToPersonaje} type="text"/>
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Nombre:   
-            <input className='inputsPersonaje' onChange={setNameToPersonaje} type="text"/>
-          </label >
-          <br></br>
-          <label className='labelStyle'>
-            Edad:   
-            <input className='inputsPersonaje' onChange={setAgeToPersonaje} type="text" />
-          </label>
-          <br></br>
-          <label className='labelStyle'>
-            Altura:   
-            <input className='inputsPersonaje' onChange={setHeightToPersonaje} type="text"/>
-          </label >
-          <br></br>
-          <label className='labelStyle'>
-            Genero:   
-            <input className='inputsPersonaje' onChange={setGenderToPersonaje} type="text" />
-          </label>
-          
           <br></br> <br></br>
           <button className='btnPersonaje' onClick={updatePersonaje}> Actualizar Personaje </button>
 
@@ -209,7 +191,7 @@ const Personajes = () => {
         <h3> Borrar Personaje </h3>
           <label className='labelStyle'>
             ID:   
-            <input className='inputsPersonaje'  onChange={setIdToPersonaje} type="text"/>
+            <input className='inputsPersonaje'  onChange={setIdToPersonajeDelete} type="text"/>
           </label>
           
           <br></br> <br></br>
