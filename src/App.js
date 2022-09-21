@@ -2,6 +2,7 @@ import './App.css';
 import Personajes from './Personajes';
 import Place from './Place';
 import Type from './Type';
+import Relacion from './Relacion'
 
 
 function App() {   
@@ -18,6 +19,9 @@ function App() {
 
 
       <Type/>
+
+
+      <Relacion/>
 
 
       <div className='divStyle'>
