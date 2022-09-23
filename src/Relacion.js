@@ -116,7 +116,7 @@ const Relation = () => {
           </label>
           <br></br>
           <label className='labelStyle'>
-            ID lugar:   
+            ID Lugar:   
             <input className='inputsPlace' onChange={setIdPlaceToRelation} type="text"/>
           </label>
           
