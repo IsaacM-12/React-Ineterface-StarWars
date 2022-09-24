@@ -76,6 +76,18 @@
   background-color: #ffffff;
 }
 
+.btnRelation{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  background-color: #5c1b6c;
+  padding: 10px;
+  border: 1.5px solid #ffffff;
+}
+.btnRelation:hover{
+  color: black;
+  background-color: #ffffff;
+}
+
 
 .inputsPersonaje{
   color: rgb(255, 255, 255);
@@ -97,6 +109,14 @@
   color: rgb(255, 255, 255);
   font-size: 10px;
   background-color: #172dd4;
+  padding: 3px;
+  border: 1.5px solid #ffffff;
+}
+
+.inputsRelation{
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  background-color: #5c1b6c;
   padding: 3px;
   border: 1.5px solid #ffffff;
 }
@@ -134,6 +154,15 @@
   border: 2px solid #005eff;
   width: 720px;
 
+}
+
+.relation{
+  padding-top: 50px;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 50px;
+  border: 2px solid #a602e2;
+  width: 720px;
 }
 
 .divStyle{

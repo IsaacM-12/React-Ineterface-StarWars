@@ -53,7 +53,7 @@ const Relation = () => {
         };
 
         axios.post(serviceUrl,newRelation ,config)
-        .then(response =>  {alert("Agregado con exito") 
+        .then(response =>  {alert("Procesado con exito") 
                                 selectRelation();} );
         }
 
@@ -101,37 +101,37 @@ const Relation = () => {
         <h1> Relaciones De los Personajes </h1>
           <ul> {relation} </ul>
           
-        <button onClick={selectRelation} className="btnPlace"> Cargar Relacion </button>     
+        <button onClick={selectRelation} className="btnRelation"> Cargar Relacion </button>     
 
 
         <h3> Crear Relaciones De Los Personajes </h3>
           <label className='labelStyle'>
             ID Personaje:   
-            <input className='inputsPlace' onChange={setIdPersonajeToRelation} type="text" />
+            <input className='inputsRelation' onChange={setIdPersonajeToRelation} type="text" />
           </label>
           <br></br>
           <label className='labelStyle'>
             ID Tipo:   
-            <input className='inputsPlace' onChange={setIdTypeToRelation} type="text" />
+            <input className='inputsRelation' onChange={setIdTypeToRelation} type="text" />
           </label>
           <br></br>
           <label className='labelStyle'>
             ID Lugar:   
-            <input className='inputsPlace' onChange={setIdPlaceToRelation} type="text"/>
+            <input className='inputsRelation' onChange={setIdPlaceToRelation} type="text"/>
           </label>
           
           <br></br> <br></br>
-          <button className='btnPlace' onClick={createRelation}> Guardar Relacion </button>
+          <button className='btnRelation' onClick={createRelation}> Guardar Relacion </button>
 
 
         <h3> Borrar Relacion </h3>
           <label className='labelStyle'>
             ID Personaje:   
-            <input className='inputsPlace' onChange={setIdPersonajeToRelationDelete} type="text" />
+            <input className='inputsRelation' onChange={setIdPersonajeToRelationDelete} type="text" />
           </label>
           
           <br></br> <br></br>
-          <button className='btnPlace' onClick={deleteRelation}> Borrar Relacion </button> 
+          <button className='btnRelation' onClick={deleteRelation}> Borrar Relacion </button> 
       </div>
     )
 }
