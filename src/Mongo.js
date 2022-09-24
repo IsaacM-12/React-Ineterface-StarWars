@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-const url = 'mongodb://localhost/'
 // mongodb://localhost:27017
 
 mongoose.connect(url, {
@@ -23,3 +22,4 @@ const mostrar = async ()=>{
     const imagen = await ImagenModel.find()
     console.log(imagen)
 }
+
