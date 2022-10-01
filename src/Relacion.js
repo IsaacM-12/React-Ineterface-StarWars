@@ -85,7 +85,7 @@ const Relation = () => {
       if(response.data.length > 0){   
         console.log(response.data);
         let relationList = response.data.map((item) => {
-          return <li key={item.idPersonaje}> Personaje: {item.idPersonaje} - Tipo: {item.idType} - Place: {item.idPlace}</li>
+          return <li key={item.idPersonaje}> Personaje: {item.idPersonaje} - Tipo: {item.idType} - Lugar: {item.idPlace}</li>
         });
 
         setRelation(relationList);

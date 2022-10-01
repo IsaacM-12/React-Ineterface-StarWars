@@ -39,6 +39,16 @@
   }
 }
 
+.select{
+  justify-content: right;
+  padding: 4px;
+  color: white;
+  background-color: black;
+}
+.select:hover{
+  color: black;
+  background-color: #ffffff;
+}
 
 .btnPersonaje{
   color: rgb(255, 255, 255);

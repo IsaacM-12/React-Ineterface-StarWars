@@ -138,7 +138,6 @@ const Personajes = () => {
     }         
   }
 
-    console.log(personajes);
     return(
     <div className="personajes">
         <div className='portada'>
